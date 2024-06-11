@@ -1,4 +1,4 @@
-import subprocess
+import socket
 from colorama import Fore
 import threading
 import time
@@ -7,12 +7,10 @@ import time
 def ping_ip(ip_address):
     while True:
         try:
-            subprocess.check_output(['ping', '-c', '4', ip_address])
-            print(f"{Fore.GREEN}Ping request success.{Fore.RESET}")
-            time.sleep(1)
-        except subprocess.CalledProcessError:
-            print(f"{Fore.RED}Ping request failed.{Fore.RESET}")
-            time.sleep(1)
+            socket.inet_aton(ip_address)
+            print(f"{Fore.GREEN}Ping successful{Fore.RESET}")
+        except socket.error:
+            print(f"{Fore.RED}Ping failed{Fore.RESET}")
 
 
 ip_address = input("Enter the IP address to ping: ")
