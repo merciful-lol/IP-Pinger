@@ -6,7 +6,7 @@ Simple script made in python that allows you to mass ping an ip.
 
 ## Requirements:
 - Python 3.12
-- requests library (`pip install requests`)
+- colorama library (`pip install colorama`)
 
 ## Note:
 - Ensure you have an active internet connection.
